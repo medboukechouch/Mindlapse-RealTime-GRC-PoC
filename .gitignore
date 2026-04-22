@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+build/
+cmake-build-*/
+*.obj
+*.o
+*.exe
+*.out
+*.log
+data/*.csv
+data/*.jsonl
+!.gitkeep
+.env

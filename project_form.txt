@@ -1,0 +1,34 @@
+L'Architecture du Projet : "Real-Time Cyber Sentinel"
+L'idée est de simuler un flux de logs système (comme ceux qu'un RSSI doit surveiller) et de le passer au crible d'une IA pour détecter les anomalies en temps réel, sans interface lourde.
+
+Étape 1 : Le moteur haute performance (C / C++)
+Mindlapse veut du temps réel. L'extraction et le formatage de données brutes volumineuses peuvent être lents en Python.
+
+Ton expertise en C et C++ prend tout son sens ici. Tu vas écrire un petit script ultra-rapide en C++ qui lit un fichier de logs système massif (par exemple des logs réseau générés aléatoirement ou un dataset open-source), le parse, et ne garde que les métadonnées utiles.
+
+C'est la preuve que tu sais gérer la performance et la mémoire, un atout rare pour un ingénieur IA.
+
+Étape 2 : Le cerveau analytique (Python + LangChain + LLM)
+C'est ici que tu reprends ta casquette de leader de l'ingénierie IA.
+
+Le script Python récupère le flux de données nettoyé par ton programme C++.
+
+Utilise LangChain pour envoyer ces paquets de logs à un LLM (tu peux utiliser l'API Gemini ou un modèle local si tu as la machine pour).
+
+Le prompt du LLM doit être orienté "Gouvernance" : "Analyse cette séquence de logs. Détecte si une politique de sécurité est violée (ex: connexion admin hors des heures normales) et génère une alerte formatée en JSON."
+
+Étape 3 : Le packaging "Pro" (GitHub)
+
+Aucun rapport en PDF, aucune fioriture étudiante.
+
+Un dépôt GitHub public nommé mindlapse-cyber-poc.
+
+Un README.md chirurgical :
+
+Le Problème : "Les SI produisent trop de logs pour une analyse GRC manuelle."
+
+La Solution : "Un pipeline hybride C++ pour la vitesse et Python/LangChain pour l'intelligence."
+
+Comment lancer le projet : (Les commandes Docker ou CLI).
+
+Tes coordonnées pro et ton mail en bas de page.

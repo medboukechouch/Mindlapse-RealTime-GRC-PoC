@@ -1,0 +1,14 @@
+pandas>=2.0.0
+python-dotenv>=1.0.1
+
+# LangChain stack
+langchain>=0.2.0
+langchain-core>=0.2.0
+langchain-google-genai>=1.0.0
+
+# Gemini SDK (explicit for cross-environment reliability)
+google-genai>=1.0.0
+
+# Utility/runtime deps
+pydantic>=2.0.0
+python-dateutil>=2.9.0
