@@ -16,6 +16,46 @@ Capable de pré-filtrer des logs bruts avec un débit de plus de 233 000 lignes/
 ### 2) Le Moteur d'Analyse (Python/LangChain)
 Un moteur Python exploite LangChain et un LLM pour interpréter les anomalies filtrées, contextualiser le risque, puis générer des rapports JSON exploitables par les équipes GRC/SOC.
 
+## Exemple visuel — Résultat final
+
+```json
+=== RAPPORT DE GOUVERNANCE TEMPS RÉEL ===
+{
+	"alertes": [
+		{
+			"ip_source": "195.241.151.7",
+			"niveau_criticite": "Moyen",
+			"type_menace": "Tentative d'escalade de privilèges (sudo)",
+			"action_recommandee": "Vérifier la légitimité des tentatives de l'utilisateur 'achang' sur proxy-mow-01 et bloquer l'IP en cas de non-conformité."
+		},
+		{
+			"ip_source": "164.218.94.112",
+			"niveau_criticite": "Critique",
+			"type_menace": "Suspicion de compromission de compte de service (www-data)",
+			"action_recommandee": "Isoler immédiatement le serveur srv-ldn-02, bloquer l'IP source et auditer les processus lancés par l'utilisateur web."
+		},
+		{
+			"ip_source": "45.250.247.54",
+			"niveau_criticite": "Critique",
+			"type_menace": "Tentative d'escalade de privilèges via compte technique (su)",
+			"action_recommandee": "Analyser l'intégrité du serveur backup-prk-01 et vérifier la présence de shells inversés (reverse shells) liés à www-data."
+		},
+		{
+			"ip_source": "186.144.249.195",
+			"niveau_criticite": "Moyen",
+			"type_menace": "Anomalie d'authentification système (cron/nginx)",
+			"action_recommandee": "Inspecter les configurations de tâches planifiées sur srv-tok-03 pour détecter une persistance malveillante."
+		},
+		{
+			"ip_source": "91.201.120.168",
+			"niveau_criticite": "Faible",
+			"type_menace": "Échec d'authentification sur compte sensible (admin)",
+			"action_recommandee": "Placer l'IP sous surveillance accrue et s'assurer que l'authentification multi-facteurs (MFA) est active pour le compte admin."
+		}
+	]
+}
+```
+
 ## Comment exécuter le projet
 
 ### Prérequis
